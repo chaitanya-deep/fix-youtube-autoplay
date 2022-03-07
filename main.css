@@ -1,0 +1,47 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    padding: 10px;
+    margin: 0;
+    font-size: 1rem;
+}
+
+#heading {
+    margin: 0 0 10px;
+    white-space: nowrap;
+}
+
+#btn-flex {
+    display: flex;
+    background-color: #fafafa;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.btn {
+    font: inherit;
+    width: 50%;
+    border: 0;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#btn-flex #btn-no {
+    background-color: crimson;
+    color: white;
+}
+
+#btn-flex.selected #btn-no {
+    background-color: transparent;
+    color: initial;
+}
+
+#btn-flex.selected #btn-yes {
+    background-color: crimson;
+    color: white;
+}

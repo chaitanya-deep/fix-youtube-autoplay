@@ -1,0 +1,39 @@
+{
+  "name": "Fix Youtube Autoplay",
+  "description": "Remembers your Autoplay choice for Youtube",
+  "version": "1.0",
+  "manifest_version": 3,
+  "host_permissions": ["*://*.youtube.com/*"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "/images/autoplay16.png",
+    "32": "/images/autoplay32.png",
+    "48": "/images/autoplay48.png",
+    "128": "/images/autoplay128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://youtube.com/*",
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*"
+      ],
+      "exclude_matches": ["*://*.music.youtube.com/*"],
+      "js": ["script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["*://*.youtube.com/*"]
+  }
+}
